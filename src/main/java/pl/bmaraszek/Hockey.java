@@ -162,20 +162,21 @@ public class Hockey extends Frame implements ActionListener, MouseListener, Runn
 	}
 
 	private void loadImages() {
+		ClassLoader loader = getClass().getClassLoader();
 		tracker = new MediaTracker(this);
-		backgroundImage = Toolkit.getDefaultToolkit().getImage(Hockey.class.getResource("img/rink.png"));
+		backgroundImage = Toolkit.getDefaultToolkit().getImage(loader.getResource("rink.png"));
 		tracker.addImage(backgroundImage, 0);
 
-		puck = Toolkit.getDefaultToolkit().getImage(Hockey.class.getResource("img/puck.png"));
+		puck = Toolkit.getDefaultToolkit().getImage(loader.getResource("puck.png"));
 		tracker.addImage(puck, 0);
 
-		humanPlayer = Toolkit.getDefaultToolkit().getImage(Hockey.class.getResource("img/player1.png"));
+		humanPlayer = Toolkit.getDefaultToolkit().getImage(loader.getResource("player1.png"));
 		tracker.addImage(humanPlayer, 0);
 
-		computerPlayer = Toolkit.getDefaultToolkit().getImage(Hockey.class.getResource("img/player2.png"));
+		computerPlayer = Toolkit.getDefaultToolkit().getImage(loader.getResource("player2.png"));
 		tracker.addImage(computerPlayer, 0);
 
-		goal = Toolkit.getDefaultToolkit().getImage(Hockey.class.getResource("img/goal.png"));
+		goal = Toolkit.getDefaultToolkit().getImage(loader.getResource("goal.png"));
 		tracker.addImage(goal, 0);
 
 		try {
